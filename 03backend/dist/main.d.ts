@@ -1,1 +1,1 @@
-declare let broj: number;
+declare let broj: string;
