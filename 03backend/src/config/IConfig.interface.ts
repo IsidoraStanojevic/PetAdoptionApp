@@ -11,5 +11,5 @@ export default interface ICongif {
             maxAge: number,
         }
     }
-}
+};
 

@@ -1,1 +1,1 @@
-declare let broj: string;
+export {};
