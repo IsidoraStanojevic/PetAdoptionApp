@@ -4,6 +4,7 @@ import Config from "./config/dev";
 import AdRouter from "./components/ad/router";
 import * as mysql2 from "mysql2/promise";
 import IApplicationResources from "./common/IApplicationResources.interface";
+import Router from "./router";
 
 async function main() {
   const application: express.Application = express();
@@ -37,7 +38,11 @@ async function main() {
     })
   );
 
-  AdRouter.setupRoutes(application, resources);
+  Router.setupRoutes(application,resources, [
+      new AdRouter(),
+  ]);
+
+ 
 
   application.use((req, res) => {
     res.sendStatus(404);
