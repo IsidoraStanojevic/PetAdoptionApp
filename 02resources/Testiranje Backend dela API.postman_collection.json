@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "d35938d7-5841-490a-8313-996b608b6767",
+		"name": "Testiranje Backend dela API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ad",
+			"item": [
+				{
+					"name": "GET all ads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/ad",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"ad"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all ads",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/ad",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"ad"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-gBF03R6Fs2YMhrDWmzsZIPDxNTM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Feb 2022 16:27:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"adId\": 1,\n        \"name\": \"Lav\",\n        \"userId\": null\n    },\n    {\n        \"adId\": 2,\n        \"name\": \"Leposava\",\n        \"userId\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GET a single ad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": [
+						{
+							"name": "GET a single ad - for excisting ad",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/ad/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"ad",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-IHUmsRBHhWLbwKlyo9hWEfUcI6A\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Feb 2022 23:37:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"adId\": 1,\n    \"name\": \"Lav\",\n    \"userId\": null\n}"
+						},
+						{
+							"name": "GET a single ad - for an invalid ad",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/ad/-5",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"ad",
+										"-5"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Feb 2022 23:38:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Bad Request"
+						},
+						{
+							"name": "GET a single ad - for a non existing ad",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/ad/45",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"ad",
+										"45"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Feb 2022 23:39:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "http://localhost:40080"
+		}
+	]
+}
